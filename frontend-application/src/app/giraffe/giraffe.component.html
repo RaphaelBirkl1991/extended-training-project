@@ -1,0 +1,30 @@
+<h1>giraffe works!</h1>
+<h2>Giraffen</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Frage</th>
+    <th>Option 1</th>
+    <th>Option 2</th>
+    <th>Option 3</th>
+    <th>Option 4</th>
+    <th>Richtige Antwort</th>
+    <th>Kommentar</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let giraffe of giraffen">
+    <td>{{ giraffe.id }}</td>
+    <td>{{ giraffe.question }}</td>
+    <td>{{ giraffe.option1 }}</td>
+    <td>{{ giraffe.option2 }}</td>
+    <td>{{ giraffe.option3 }}</td>
+    <td>{{ giraffe.option4 }}</td>
+    <td>{{ giraffe.correctAnswer }}</td>
+    <td>{{ giraffe.commentary }}</td>
+  </tr>
+  </tbody>
+</table>
+<!--<router-outlet></router-outlet>-->
