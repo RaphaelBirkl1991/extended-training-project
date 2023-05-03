@@ -1,13 +1,74 @@
 
-<p>home works!</p>
-<br><br><br><br>
+<!--<p>home works!</p>-->
+<!--<br><br><br><br>-->
+<!--  <ul>-->
+<!--    <a routerLink="giraffe">Zu den Giraffen</a><br><br>-->
+<!--    <a routerLink="rhino">Zu den Nashörnern</a><br><br>-->
+<!--    <a routerLink="otter">Zu den Ottern</a><br><br>-->
+<!--    <a routerLink="tiger">Zu den Tigern</a><br><br>-->
+<!--  </ul>-->
+
+<!--<router-outlet></router-outlet>-->
+
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+
+</head>
+<body>
+<header>
+  <h1>Willkommen!</h1>
+</header>
+<nav>
   <ul>
-    <a routerLink="giraffe">Zu den Giraffen</a><br><br>
-    <a routerLink="rhino">Zu den Nashörnern</a><br><br>
-    <a routerLink="otter">Zu den Ottern</a><br><br>
-    <a routerLink="tiger">Zu den Tigern</a><br><br>
+    <li><a routerLink="giraffe">Zu den Giraffen</a></li>
+    <li><a routerLink="rhino">Zu den Nashörnern</a></li>
+    <li><a routerLink="otter">Zu den Ottern</a></li>
+    <li><a routerLink="tiger">Zu den Tigern</a></li>
   </ul>
+</nav>
+<main>
+
+  <table>
+    <tr>
+
+      <th>
+      <a routerLink="giraffe">
+        <img src="https://naturfotografen-forum.de/data/o/107/535191/image.jpg" alt="Giraffe" class="link-img">
+      </a>
+      </th>
+
+      <th>
+        <a routerLink="rhino">
+          <img src="https://th.bing.com/th/id/R.2cffb66e6c6b55daa3a85fd5c2edb237?rik=XtPG%2fYGrnRCHTg&pid=ImgRaw&r=0" alt="Nashorn" class="link-img">
+        </a>
+      </th>
+
+    </tr>
+
+
+    <tr>
+      <th>
+        <a routerLink="tiger">
+          <img src="https://th.bing.com/th/id/R.cced117aa9f69ebc9dd0a2f53e4c7f8c?rik=yGI6dxmnvgfPNA&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2f4%2f41%2fSiberischer_tiger_de_edit02.jpg&ehk=GGilom7nKQmCZAUfgeH88I7IRQuLfOj%2fMi2ZH2t6KoI%3d&risl=&pid=ImgRaw&r=0" alt="Tiger" class="link-img">
+        </a>
+      </th>
+
+      <th>
+        <a routerLink="otter">
+          <img src="https://th.bing.com/th/id/OIP.D47cxjYaZrP34usOwPp60QHaFu?pid=ImgDet&rs=1" alt="Otter" class="link-img">
+        </a>
+      </th>
+
+    </tr>
+  </table>
 
 
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</main>
+</body>
+</html>
