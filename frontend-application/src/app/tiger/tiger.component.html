@@ -1,0 +1,27 @@
+<h2> Tiger</h2>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Frage</th>
+    <th>Option 1</th>
+    <th>Option 2</th>
+    <th>Option 3</th>
+    <th>Option 4</th>
+    <th>Richtige Antwort</th>
+    <th>Kommentar</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let tiger of tigers">
+    <td>{{ tiger.id }}</td>
+    <td>{{ tiger.question }}</td>
+    <td>{{ tiger.option1 }}</td>
+    <td>{{ tiger.option2 }}</td>
+    <td>{{ tiger.option3 }}</td>
+    <td>{{ tiger.option4 }}</td>
+    <td>{{ tiger.correctAnswer }}</td>
+    <td>{{ tiger.commentary }}</td>
+  </tr>
+  </tbody>
+</table>

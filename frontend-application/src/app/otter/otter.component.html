@@ -1,0 +1,28 @@
+<h2>Otter</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Frage</th>
+    <th>Option 1</th>
+    <th>Option 2</th>
+    <th>Option 3</th>
+    <th>Option 4</th>
+    <th>Richtige Antwort</th>
+    <th>Kommentar</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let otter of otters">
+    <td>{{ otter.id }}</td>
+    <td>{{ otter.question }}</td>
+    <td>{{ otter.option1 }}</td>
+    <td>{{ otter.option2 }}</td>
+    <td>{{ otter.option3 }}</td>
+    <td>{{ otter.option4 }}</td>
+    <td>{{ otter.correctAnswer }}</td>
+    <td>{{ otter.commentary }}</td>
+  </tr>
+  </tbody>
+</table>

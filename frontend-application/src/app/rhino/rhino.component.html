@@ -1,0 +1,28 @@
+<h2>Nashörner</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Frage</th>
+    <th>Option 1</th>
+    <th>Option 2</th>
+    <th>Option 3</th>
+    <th>Option 4</th>
+    <th>Richtige Antwort</th>
+    <th>Kommentar</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let rhino of rhinos">
+    <td>{{ rhino.id }}</td>
+    <td>{{ rhino.question }}</td>
+    <td>{{ rhino.option1 }}</td>
+    <td>{{ rhino.option2 }}</td>
+    <td>{{ rhino.option3 }}</td>
+    <td>{{ rhino.option4 }}</td>
+    <td>{{ rhino.correctAnswer }}</td>
+    <td>{{ rhino.commentary }}</td>
+  </tr>
+  </tbody>
+</table>
