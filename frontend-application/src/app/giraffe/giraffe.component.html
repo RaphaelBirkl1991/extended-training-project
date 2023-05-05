@@ -30,7 +30,7 @@
   <h2>Frage {{currentQuestionIndex}}:</h2>
   <p>{{giraffen[currentQuestionIndex - 1].question}}</p>
 
-  <ul>
+
     <li>
       <button (click)="selectOption(giraffen[currentQuestionIndex - 1].option1)">
         {{giraffen[currentQuestionIndex - 1].option1}}
@@ -51,7 +51,7 @@
         {{giraffen[currentQuestionIndex - 1].option4}}
       </button>
     </li>
-  </ul>
+
 
   <button *ngIf="showNextQuestionButton()" (click)="nextQuestion()">Nächste Frage</button>
 </div>
