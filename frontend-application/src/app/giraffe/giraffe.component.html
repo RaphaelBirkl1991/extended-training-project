@@ -1,56 +1,76 @@
 <h2>Giraffen</h2>
-<a routerLink="">zurück</a>
-<!--<table>-->
-<!--  <thead>-->
-<!--  <tr>-->
-<!--    <th>ID</th>-->
-<!--    <th>Frage</th>-->
-<!--    <th>Option 1</th>-->
-<!--    <th>Option 2</th>-->
-<!--    <th>Option 3</th>-->
-<!--    <th>Option 4</th>-->
-<!--    <th>Richtige Antwort</th>-->
-<!--    <th>Kommentar</th>-->
-<!--  </tr>-->
-<!--  </thead>-->
-<!--  <tbody>-->
-<!--  <tr *ngFor="let giraffe of giraffen">-->
-<!--    <td>{{ giraffe.id }}</td>-->
-<!--    <td>{{ giraffe.question }}</td>-->
-<!--    <td>{{ giraffe.option1 }}</td>-->
-<!--    <td>{{ giraffe.option2 }}</td>-->
-<!--    <td>{{ giraffe.option3 }}</td>-->
-<!--    <td>{{ giraffe.option4 }}</td>-->
-<!--    <td>{{ giraffe.correctAnswer }}</td>-->
-<!--    <td>{{ giraffe.commentary }}</td>-->
-<!--  </tr>-->
-<!--  </tbody>-->
-<!--</table>-->
+
 <div *ngIf="currentQuestionIndex <= giraffen.length">
   <h2>Frage {{currentQuestionIndex}}:</h2>
   <p>{{giraffen[currentQuestionIndex - 1].question}}</p>
 
 
-    <li>
-      <button (click)="selectOption(giraffen[currentQuestionIndex - 1].option1)">
-        {{giraffen[currentQuestionIndex - 1].option1}}
-      </button>
-    </li>
-    <li>
-      <button (click)="selectOption(giraffen[currentQuestionIndex - 1].option2)">
-        {{giraffen[currentQuestionIndex - 1].option2}}
-      </button>
-    </li>
-    <li>
-      <button (click)="selectOption(giraffen[currentQuestionIndex - 1].option3)">
-        {{giraffen[currentQuestionIndex - 1].option3}}
-      </button>
-    </li>
-    <li>
-      <button (click)="selectOption(giraffen[currentQuestionIndex - 1].option4)">
-        {{giraffen[currentQuestionIndex - 1].option4}}
-      </button>
-    </li>
+  <table class="table caption-top">
+    <caption>Frage {{currentQuestionIndex}}:</caption>
+    <thead class="table-question">
+    <tr>
+      <p>{{giraffen[currentQuestionIndex -1].question}}</p>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr> <!--ROW 1-->
+<!--      <th scope="row">1</th>-->
+
+      <td><!--COL 1-->
+              <button (click)="selectOption(giraffen[currentQuestionIndex - 1].option1)">
+                {{giraffen[currentQuestionIndex - 1].option1}}
+              </button>
+      </td>
+
+      <td><!--COL 2-->
+        <button (click)="selectOption(giraffen[currentQuestionIndex - 1].option2)">
+                  {{giraffen[currentQuestionIndex - 1].option2}}
+                </button>
+      </td>
+    </tr><!--END: ROW 1-->
+
+
+    <tr><!--ROW 2-->
+
+<!--      <th scope="row">2</th>-->
+      <td><!--COL 3-->
+        <button (click)="selectOption(giraffen[currentQuestionIndex - 1].option3)">
+          {{giraffen[currentQuestionIndex - 1].option3}}
+        </button>
+      </td>
+
+      <td><!--COL 4-->
+        <button (click)="selectOption(giraffen[currentQuestionIndex - 1].option4)">
+          {{giraffen[currentQuestionIndex - 1].option4}}
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
+
+<!--    <li>-->
+<!--      <button (click)="selectOption(giraffen[currentQuestionIndex - 1].option1)">-->
+<!--        {{giraffen[currentQuestionIndex - 1].option1}}-->
+<!--      </button>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--      <button (click)="selectOption(giraffen[currentQuestionIndex - 1].option2)">-->
+<!--        {{giraffen[currentQuestionIndex - 1].option2}}-->
+<!--      </button>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--      <button (click)="selectOption(giraffen[currentQuestionIndex - 1].option3)">-->
+<!--        {{giraffen[currentQuestionIndex - 1].option3}}-->
+<!--      </button>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--      <button (click)="selectOption(giraffen[currentQuestionIndex - 1].option4)">-->
+<!--        {{giraffen[currentQuestionIndex - 1].option4}}-->
+<!--      </button>-->
+<!--    </li>-->
 
 
   <button *ngIf="showNextQuestionButton()" (click)="nextQuestion()">Nächste Frage</button>
@@ -60,3 +80,9 @@
   <h2>Quiz beendet</h2>
   <p>Danke fürs Mitmachen!</p>
 </div>
+<footer>
+  <div class="question">Frage {{currentQuestionIndex}}:</div>
+  <div class="animal">Thema: Giraffen</div>
+  <div class="back"><a routerLink="">zurück</a></div>
+</footer>
+

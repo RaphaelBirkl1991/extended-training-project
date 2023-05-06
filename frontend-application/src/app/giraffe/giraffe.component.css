@@ -1,0 +1,29 @@
+footer {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /*text-align: center;*/
+  padding: 12px;
+  background-color: lightgray;
+  color: black;
+}
+
+.question{
+  text-align: left;
+}
+
+.animal{
+  margin: auto;
+  font-weight: bold;
+}
+
+.back{
+  text-align: right;
+}
+
+.table-question{
+  text-align: center;
+}
