@@ -56,5 +56,12 @@ main {
 
 }
 
+.card-custom {
+  height: 250px;
+}
 
+.btn {
+  background: lightslategrey;
+  color: white;
 
+}
