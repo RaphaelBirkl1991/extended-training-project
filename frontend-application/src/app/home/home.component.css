@@ -63,5 +63,8 @@ main {
 .btn {
   background: lightslategrey;
   color: white;
+}
 
+.card-img-top{
+  height: 220px;
 }
