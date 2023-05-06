@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { OtterComponent } from './otter/otter.component';
 import { RhinoComponent } from './rhino/rhino.component';
 import { TigerComponent } from './tiger/tiger.component';
+import { MoleComponent } from './mole/mole.component';
+import { DonkeyComponent } from './donkey/donkey.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { TigerComponent } from './tiger/tiger.component';
     HomeComponent,
     OtterComponent,
     RhinoComponent,
-    TigerComponent
+    TigerComponent,
+    MoleComponent,
+    DonkeyComponent
   ],
   imports: [
     BrowserModule,

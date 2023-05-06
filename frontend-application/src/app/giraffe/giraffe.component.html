@@ -2,6 +2,7 @@
 <div *ngIf="currentQuestionIndex <= giraffen.length">
 
 <br><br><br>
+<!--  TABELLEN CONTAINER-->
 <div class="table-container">
   <table class="table table-borderless caption-top">
     <caption>Frage {{currentQuestionIndex}}:</caption>
@@ -10,18 +11,13 @@
       <p>{{giraffen[currentQuestionIndex -1].question}}</p>
     </th>
     </thead>
-
     <tbody>
     <tr> <!--ROW 1-->
-
-<!--      <th scope="row">1</th>-->
-
       <td width="50%"><!--COL 1-->
               <button class="btn" (click)="selectOption(giraffen[currentQuestionIndex - 1].option1)">
                 {{giraffen[currentQuestionIndex - 1].option1}}
               </button>
       </td>
-
       <td width="50%"><!--COL 2-->
         <button class="btn" (click)="selectOption(giraffen[currentQuestionIndex - 1].option2)">
                   {{giraffen[currentQuestionIndex - 1].option2}}
@@ -29,10 +25,7 @@
       </td>
     </tr><!--END: ROW 1-->
 
-
     <tr><!--ROW 2-->
-
-<!--      <th scope="row">2</th>-->
       <td width="50%"><!--COL 3-->
         <button class="btn" (click)="selectOption(giraffen[currentQuestionIndex - 1].option3)">
           {{giraffen[currentQuestionIndex - 1].option3}}
@@ -47,15 +40,21 @@
     </tr>
     </tbody>
   </table>
-</div>
+</div> <!--ENDE: TABELLENCONTAINER-->
 
+
+<!--  BUTTON: NÄCHSTE FRAGE -->
   <button *ngIf="showNextQuestionButton()" (click)="nextQuestion()">Nächste Frage</button>
 </div>
 
+
+
+<!--SCHLUSSBEMERKUNG: FUNKTIONIERT NOCH NICHT-->
 <div *ngIf="currentQuestionIndex > giraffen.length">
   <h2>Quiz beendet</h2>
   <p>Danke fürs Mitmachen!</p>
 </div>
+
 <footer>
   <div class="question">Frage {{currentQuestionIndex}}:</div>
   <div class="animal">Thema: Giraffen</div>
