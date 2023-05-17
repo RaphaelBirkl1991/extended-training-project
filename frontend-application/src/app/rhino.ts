@@ -1,5 +1,4 @@
-import {CorrectAnswer} from "./correct-answer";
-
+import {CorrectOption} from "./correct-option";
 export interface Rhino {
   id: number;
   question: string;
@@ -7,7 +6,9 @@ export interface Rhino {
   option2: string;
   option3: string;
   option4: string;
-  correctAnswer: CorrectAnswer;
   commentary: string;
 
+  correctoptiontext: string;
+
+  correctoption: CorrectOption;
 }

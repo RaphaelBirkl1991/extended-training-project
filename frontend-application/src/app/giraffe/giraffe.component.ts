@@ -10,19 +10,34 @@ import { HttpClient } from '@angular/common/http';
 export class GiraffeComponent implements OnInit {
   currentQuestionIndex = 1;
   selectedOption: string | undefined;
+  correctAns: string | undefined;
+
+
 
   giraffen: Giraffe[] = [];
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
+
     this.http
       .get<Giraffe[]>('api/giraffe')
       .subscribe(g => (this.giraffen = g));
+
   }
 
   selectOption(option: string): void {
     this.selectedOption = option;
+  }
+
+
+  checkAnswer(): string {
+    if (this.selectedOption == this.giraffen[this.currentQuestionIndex - 1].correctAnswer) {
+      this.correctAns = "Richtig!";
+    } else {
+      this.correctAns = "Falsch!";
+    }
+    return this.correctAns;
   }
 
   showNextQuestionButton(): boolean {
@@ -33,9 +48,15 @@ export class GiraffeComponent implements OnInit {
   }
 
   nextQuestion(): void {
-    this.selectedOption = undefined;
+    this.selectedOption == undefined;
     this.currentQuestionIndex++;
+    this.selectedOption === undefined;
   }
 
+  // commentaryVisible: boolean = false;
+  //
+  // showCommentary(): void {
+  //   this.commentaryVisible = true;
+  // }
 
 }

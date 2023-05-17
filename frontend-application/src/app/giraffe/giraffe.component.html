@@ -38,13 +38,36 @@
         </button>
       </td>
     </tr>
+
     </tbody>
   </table>
 </div> <!--ENDE: TABELLENCONTAINER-->
 
+<br><br><br>
+
+<!--  &lt;!&ndash;  BUTTON KOMMENTAR EINBLENDEN&ndash;&gt;-->
+<!--  <button (click)="showCommentary()">Kommentar einblenden</button>-->
+<!--  <div *ngIf="commentaryVisible">-->
+<!--    <p>{{ giraffen[currentQuestionIndex - 1].commentary }}</p>-->
+<!--  </div>-->
+<!--  <br><br><br><br>-->
+
+
+<!--  BUTTON ANTWORT ÜBERPRÜFEN-->
+  <button *ngIf="selectedOption !== undefined" (click)="checkAnswer()">Antwort überprüfen</button>
+  <div *ngIf="correctAns !== undefined">
+    <p>{{correctAns}}</p>
+    <p>{{giraffen[currentQuestionIndex-1].correctAnswer}}</p>
+    <p>{{giraffen[currentQuestionIndex - 1].commentary}}</p>
+  </div>
+
+
+  <br><br><br>
+
+
 
 <!--  BUTTON: NÄCHSTE FRAGE -->
-  <button *ngIf="showNextQuestionButton()" (click)="nextQuestion()">Nächste Frage</button>
+  <button *ngIf="selectedOption !== undefined" (click)="nextQuestion()">Nächste Frage</button>
 </div>
 
 
