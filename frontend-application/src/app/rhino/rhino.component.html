@@ -54,11 +54,10 @@
 
 <div *ngIf="showResult">{{rhinos[currentQuestionIndex - 1].commentary}}
 </div>
-
-
-
-
-
+<br><br>
+<!--  BUTTON: NÄCHSTE FRAGE -->
+<button *ngIf="isButtonClicked" (click)="nextQuestion()">Nächste Frage</button>
+<!--(click)="nextQuestion()-->
 
 
 

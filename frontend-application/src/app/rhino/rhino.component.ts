@@ -14,12 +14,13 @@ export class RhinoComponent implements OnInit{
   public clickedButtonIndex: number | undefined;
   showResult = false;
 
+  isButtonClicked: boolean = false;
   isButtonClicked1: boolean = false;
   isButtonClicked2: boolean = false;
   isButtonClicked3: boolean = false;
   isButtonClicked4: boolean = false;
 
-
+  // questionAnswered: boolean = false;
   rhinos: Rhino[] = [];
 
   rhino: Rhino = {
@@ -42,6 +43,8 @@ export class RhinoComponent implements OnInit{
   }
 
   buttonClicked(buttonIndex: number): void {
+    this.isButtonClicked = true;
+
     if(buttonIndex === 1){
       this.isButtonClicked1 = true
     }
@@ -55,7 +58,6 @@ export class RhinoComponent implements OnInit{
       this.isButtonClicked4 = true
     }
 
-    // this.buttonPressed == true;
     this.clickedButtonIndex = buttonIndex;
     console.log(this.clickedButtonIndex);
     console.log(this.rhino.correctoption);
@@ -73,5 +75,17 @@ export class RhinoComponent implements OnInit{
     return this.clickedButtonIndex == this.rhino.correctoption;
   }
 
+  nextQuestion(): void {
+    this.isButtonClicked = true;
+    this.currentQuestionIndex++;
+    this.isButtonClicked = false;
+    console.log(this.currentQuestionIndex);
+    console.log('Button clicked');
+    this.isButtonClicked1 = false;
+    this.isButtonClicked2 = false;
+    this.isButtonClicked3 = false;
+    this.isButtonClicked4 = false;
+    this.showResult = false
+  }
 
 }
