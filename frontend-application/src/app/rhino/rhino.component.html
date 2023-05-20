@@ -82,7 +82,25 @@
   </table>
 </div> <!--ENDE: TABELLENCONTAINER-->
 
+
+<div *ngIf="showResult">{{rhinos[currentQuestionIndex - 1].commentary}}
+</div>
+
+<div *ngIf="showResult">
+  <p [ngClass]="{'correct': isCorrect, 'incorrect': !isCorrect}">
+    {{ isCorrect ? 'Richtig' : 'Falsch' }}
+  </p>
+</div>
+
+
 <div>{{clickedButtonIndex}}</div>
 
 
-<a routerLink="">zurück</a>
+
+
+
+
+
+<a routerLink="">zurück zur Übersicht</a>
+<button *ngIf="buttonPressed == true" >Nächste Frage</button>
+

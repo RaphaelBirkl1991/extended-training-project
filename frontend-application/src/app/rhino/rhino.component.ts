@@ -11,7 +11,10 @@ import {Rhino} from "../rhino";
 export class RhinoComponent implements OnInit{
 
   currentQuestionIndex = 1;
+  public buttonPressed = false;
   public clickedButtonIndex: number | undefined;
+  showResult = false;
+
 
   rhinos: Rhino[] = [];
 
@@ -34,14 +37,24 @@ export class RhinoComponent implements OnInit{
       this.rhinos = r);
   }
 
+
+
   buttonClicked(buttonIndex: number): void {
+    this.buttonPressed == true;
   this.clickedButtonIndex = buttonIndex;
   console.log(this.clickedButtonIndex);
   console.log(this.rhino.correctoption);
   if(this.clickedButtonIndex == this.rhino.correctoption){
-    console.log("richtig")}
-  else {
-    console.log("falsch")
+    console.log("richtig");
+    this.showResult = true;
+  } else {
+    console.log("falsch");
   }
   }
+
+  get isCorrect(): boolean {
+    return this.clickedButtonIndex == this.rhino.correctoption;
+  }
+
+
 }

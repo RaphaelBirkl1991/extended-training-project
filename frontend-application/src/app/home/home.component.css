@@ -63,6 +63,9 @@ main {
 .btn {
   background: lightslategrey;
   color: white;
+  transform: scale(0.98);
+  cursor: pointer;
+
 }
 
 .card-img-top{

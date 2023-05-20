@@ -78,6 +78,10 @@ button.active {
   background-color: lightgoldenrodyellow;
 }
 
+button.selected{
+  background-color: lightgoldenrodyellow;
+}
+
 footer {
   position: fixed;
   display: flex;

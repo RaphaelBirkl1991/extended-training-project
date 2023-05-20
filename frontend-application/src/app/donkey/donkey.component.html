@@ -1,1 +1,11 @@
-<p>donkey works!</p>
+<div>
+  <h2>Frage: {{ question }}</h2>
+  <div *ngFor="let option of options; let i = index">
+    <button [ngClass]="{'selected': selectedAnswerIndex === i}" (click)="selectAnswer(i)">{{ option }}</button>
+  </div>
+  <div *ngIf="showResult">
+    <p [ngClass]="{'correct': isCorrect, 'incorrect': !isCorrect}">
+      {{ isCorrect ? 'Richtig' : 'Falsch' }}
+    </p>
+  </div>
+</div>

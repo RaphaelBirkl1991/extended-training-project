@@ -1,0 +1,11 @@
+button.selected {
+  background-color: yellow;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}

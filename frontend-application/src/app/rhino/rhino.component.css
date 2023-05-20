@@ -90,3 +90,11 @@ footer {
   background-color: #f2f2f2;
   color: black;
 }
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
