@@ -53,10 +53,4 @@ export class GiraffeComponent implements OnInit {
     this.selectedOption === undefined;
   }
 
-  // commentaryVisible: boolean = false;
-  //
-  // showCommentary(): void {
-  //   this.commentaryVisible = true;
-  // }
-
 }

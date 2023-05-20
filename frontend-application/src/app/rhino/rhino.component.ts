@@ -79,8 +79,6 @@ export class RhinoComponent implements OnInit{
     this.isButtonClicked = true;
     this.currentQuestionIndex++;
     this.isButtonClicked = false;
-    console.log(this.currentQuestionIndex);
-    console.log('Button clicked');
     this.isButtonClicked1 = false;
     this.isButtonClicked2 = false;
     this.isButtonClicked3 = false;

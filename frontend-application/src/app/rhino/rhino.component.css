@@ -96,19 +96,6 @@ button.active {
 }
 
 
-/*footer {*/
-/*  position: fixed;*/
-/*  display: flex;*/
-/*  justify-content: center;*/
-/*  left: 0;*/
-/*  bottom: 0;*/
-/*  width: 100%;*/
-/*  text-align: center;*/
-/*  padding: 12px;*/
-/*  background-color: #f2f2f2;*/
-/*  color: black;*/
-/*}*/
-
 footer {
   position: fixed;
   display: flex;
@@ -122,11 +109,32 @@ footer {
   color: black;
 }
 
-footer .animal {
-  flex-grow: 1;
-}
+/*footer .animal {*/
+/*  flex-grow: 1;*/
+/*}*/
 
 footer .back {
+  flex-grow: 1;
+  text-align: left;
+}
+
+footer .next {
   flex-grow: 0;
   margin-left: auto;
+}
+
+.next-button {
+  margin-left: auto; /* Verschiebt den Button nach rechts */
+  display: block; /* Macht den Button zu einem Blockelement */
+  width: 200px; /* Legt die Breite des Buttons fest */
+  height: 40px; /* Legt die Höhe des Buttons fest */
+  background-color: darkgrey; /* Hintergrundfarbe des Buttons */
+  color: black; /* Textfarbe des Buttons */
+   /* Entfernt den Rand des Buttons */
+  border-radius: 4px; /* Legt die Eckenradius des Buttons fest */
+  cursor: pointer; /* Zeigt an, dass der Button anklickbar ist */
+}
+
+.next-button:disabled {
+  cursor: not-allowed; /* Ändert den Cursor-Stil, wenn der Button auf disabled ist */
 }
