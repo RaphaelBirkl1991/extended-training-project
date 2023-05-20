@@ -2,7 +2,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
+  /*background-color: #f2f2f2;*/
+  background-color: white;
 }
 header {
   background-color: #0074D9;
@@ -17,13 +18,14 @@ nav ul {
 }
 nav li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 10px;
 }
 nav a {
   text-decoration: none;
   color: #333;
   padding: 10px;
-  background-color: #fff;
+  /*background-color: #fff;*/
+  background-color: grey;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
@@ -45,6 +47,7 @@ main {
   margin: 10px;
   width: 270px;
   height: 270px;
+  border: 1px solid black;
 }
 
 .hover-effect:hover {
@@ -53,11 +56,19 @@ main {
 
 .card-body{
   background: white;
+  background: #f2f2f2;
+  /*background: lightgrey;*/
+  /*background: #fff;*/
+  border: 1px solid black;
+}
 
+.card-img-top{
+  border: 1px solid black;
 }
 
 .card-custom {
   height: 250px;
+  border: 1px solid black;
 }
 
 .btn {
