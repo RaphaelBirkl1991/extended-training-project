@@ -72,14 +72,14 @@
 
 
 
-<!--SCHLUSSBEMERKUNG: FUNKTIONIERT NOCH NICHT-->
+<!--SCHLUSSBEMERKUNG-->
 <div *ngIf="currentQuestionIndex > giraffen.length">
   <h2>Quiz beendet</h2>
   <p>Danke fürs Mitmachen!</p>
 </div>
 
 <footer>
-  <div class="question">Frage {{currentQuestionIndex}}:</div>
+  <div class="question">Frage: {{currentQuestionIndex}} / {{giraffen.length}}</div>
   <div class="animal">Thema: Giraffen</div>
   <div class="back"><a routerLink="">zurück</a></div>
 </footer>

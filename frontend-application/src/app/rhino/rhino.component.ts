@@ -11,9 +11,13 @@ import {Rhino} from "../rhino";
 export class RhinoComponent implements OnInit{
 
   currentQuestionIndex = 1;
-  public buttonPressed = false;
   public clickedButtonIndex: number | undefined;
   showResult = false;
+
+  isButtonClicked1: boolean = false;
+  isButtonClicked2: boolean = false;
+  isButtonClicked3: boolean = false;
+  isButtonClicked4: boolean = false;
 
 
   rhinos: Rhino[] = [];
@@ -37,20 +41,33 @@ export class RhinoComponent implements OnInit{
       this.rhinos = r);
   }
 
-
-
   buttonClicked(buttonIndex: number): void {
-    this.buttonPressed == true;
-  this.clickedButtonIndex = buttonIndex;
-  console.log(this.clickedButtonIndex);
-  console.log(this.rhino.correctoption);
-  if(this.clickedButtonIndex == this.rhino.correctoption){
-    console.log("richtig");
-    this.showResult = true;
-  } else {
-    console.log("falsch");
+    if(buttonIndex === 1){
+      this.isButtonClicked1 = true
+    }
+    if(buttonIndex === 2){
+      this.isButtonClicked2 = true
+    }
+    if(buttonIndex === 3){
+      this.isButtonClicked3 = true
+     }
+    if(buttonIndex === 4) {
+      this.isButtonClicked4 = true
+    }
+
+    // this.buttonPressed == true;
+    this.clickedButtonIndex = buttonIndex;
+    console.log(this.clickedButtonIndex);
+    console.log(this.rhino.correctoption);
+    if(this.clickedButtonIndex == this.rhino.correctoption){
+      console.log("richtig");
+      this.showResult = true;
+    } else {
+      console.log("falsch");
+      this.showResult = true;
+    }
   }
-  }
+
 
   get isCorrect(): boolean {
     return this.clickedButtonIndex == this.rhino.correctoption;

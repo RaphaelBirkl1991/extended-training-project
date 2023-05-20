@@ -1,50 +1,10 @@
-<h2>Nashörner</h2>
-<!--<div *ngFor="let rhino of rhinos">-->
-<!--  <p>Kommentar: {{ rhino.commentary }}</p>-->
-<!--  <p>Richtiger Antworttext: {{ rhino.correctoptiontext }}</p>-->
-<!--  <p>Richtige Antwort: {{ rhino.correctoption }}</p>-->
-<!--</div>-->
 
-
-
-
-
-
-
-<!--<table>-->
-<!--  <thead>-->
-<!--  <tr>-->
-<!--    <th>ID</th>-->
-<!--    <th>Frage</th>-->
-<!--    <th>Option 1</th>-->
-<!--    <th>Option 2</th>-->
-<!--    <th>Option 3</th>-->
-<!--    <th>Option 4</th>-->
-<!--    <th>Kommentar</th>-->
-<!--    <th>Antworttext</th>-->
-<!--    <th>Richtige Antwort</th>-->
-<!--  </tr>-->
-<!--  </thead>-->
-<!--  <tbody>-->
-<!--  <tr *ngFor="let rhino of rhinos">-->
-<!--    <td>{{ rhino.id }}</td>-->
-<!--    <td>{{ rhino.question }}</td>-->
-<!--    <td>{{ rhino.option1 }}</td>-->
-<!--    <td>{{ rhino.option2 }}</td>-->
-<!--    <td>{{ rhino.option3 }}</td>-->
-<!--    <td>{{ rhino.option4 }}</td>-->
-<!--    <td>{{ rhino.commentary }}</td>-->
-<!--    <td>{{ rhino.correctoptiontext }}</td>-->
-<!--    <td>{{ rhino.correctoption }}</td>-->
-<!--  </tr>-->
-<!--  </tbody>-->
-<!--</table>-->
-<!--<br><br><br><br><br>-->
+<br><br><br>
 
 <!--  TABELLEN CONTAINER-->
 <div class="table-container">
   <table class="table table-borderless caption-top">
-    <caption>Frage {{currentQuestionIndex}}:</caption>
+    <caption>Frage: {{currentQuestionIndex}} / {{rhinos.length}}</caption>
     <thead class="table-question">
     <th colspan="2">
       <p>{{rhinos[currentQuestionIndex -1].question}}</p>
@@ -53,12 +13,12 @@
     <tbody>
     <tr> <!--ROW 1-->
       <td width="50%"><!--COL 1-->
-        <button class="btn" (click)="buttonClicked(1)">
+        <button class="btn" (click)="buttonClicked(1)" [ngClass]="{'button-selected': isButtonClicked1 }">
           {{rhinos[currentQuestionIndex - 1].option1}}
         </button>
       </td>
       <td width="50%"><!--COL 2-->
-        <button class="btn" (click)="buttonClicked(2)">
+        <button class="btn" (click)="buttonClicked(2)" [ngClass]="{'button-selected': isButtonClicked2}">
           {{rhinos[currentQuestionIndex - 1].option2}}
         </button>
       </td>
@@ -66,13 +26,13 @@
 
     <tr><!--ROW 2-->
       <td width="50%"><!--COL 3-->
-        <button class="btn" (click)="buttonClicked(3)">
+        <button class="btn" (click)="buttonClicked(3)" [ngClass]="{'button-selected': isButtonClicked3}">
           {{rhinos[currentQuestionIndex - 1].option3}}
         </button>
       </td>
 
       <td width="50%"><!--COL 4-->
-        <button class="btn" (click)="buttonClicked(4)">
+        <button class="btn" (click)="buttonClicked(4)" [ngClass]="{'button-selected': isButtonClicked4}">
           {{rhinos[currentQuestionIndex - 1].option4}}
         </button>
       </td>
@@ -83,8 +43,8 @@
 </div> <!--ENDE: TABELLENCONTAINER-->
 
 
-<div *ngIf="showResult">{{rhinos[currentQuestionIndex - 1].commentary}}
-</div>
+
+
 
 <div *ngIf="showResult">
   <p [ngClass]="{'correct': isCorrect, 'incorrect': !isCorrect}">
@@ -92,15 +52,18 @@
   </p>
 </div>
 
-
-<div>{{clickedButtonIndex}}</div>
-
-
+<div *ngIf="showResult">{{rhinos[currentQuestionIndex - 1].commentary}}
+</div>
 
 
 
 
 
-<a routerLink="">zurück zur Übersicht</a>
-<button *ngIf="buttonPressed == true" >Nächste Frage</button>
 
+
+
+
+<footer>
+  <div class="animal">Thema: Nashörner</div>
+  <div class="back"><a routerLink="">zurück zur Übersicht</a></div>
+</footer>
