@@ -1,3 +1,7 @@
+<!--<button class="btn" (click)="buttonClicked(1)" [disabled]="isButtonClicked1 || showResult">Option 1</button>-->
+<!--<button class="btn" (click)="buttonClicked(2)" [disabled]="isButtonClicked2 || showResult">Option 2</button>-->
+<!--<button class="btn" (click)="buttonClicked(3)" [disabled]="isButtonClicked3 || showResult">Option 3</button>-->
+<!--<button class="btn" (click)="buttonClicked(4)" [disabled]="isButtonClicked4 || showResult">Option 4</button>-->
 
 <br><br><br>
 
@@ -13,12 +17,12 @@
     <tbody>
     <tr> <!--ROW 1-->
       <td width="50%"><!--COL 1-->
-        <button class="btn" (click)="buttonClicked(1)" [ngClass]="{'button-selected': isButtonClicked1 }">
+        <button class="btn" (click)="buttonClicked(1)" [disabled]="isButtonClicked1 || showResult" [ngClass]="{'button-selected': isButtonClicked1 }">
           {{rhinos[currentQuestionIndex - 1].option1}}
         </button>
       </td>
       <td width="50%"><!--COL 2-->
-        <button class="btn" (click)="buttonClicked(2)" [ngClass]="{'button-selected': isButtonClicked2}">
+        <button class="btn" (click)="buttonClicked(2)" [disabled]="isButtonClicked2 || showResult" [ngClass]="{'button-selected': isButtonClicked2}">
           {{rhinos[currentQuestionIndex - 1].option2}}
         </button>
       </td>
@@ -26,13 +30,13 @@
 
     <tr><!--ROW 2-->
       <td width="50%"><!--COL 3-->
-        <button class="btn" (click)="buttonClicked(3)" [ngClass]="{'button-selected': isButtonClicked3}">
+        <button class="btn" (click)="buttonClicked(3)" [disabled]="isButtonClicked3 || showResult" [ngClass]="{'button-selected': isButtonClicked3}">
           {{rhinos[currentQuestionIndex - 1].option3}}
         </button>
       </td>
 
       <td width="50%"><!--COL 4-->
-        <button class="btn" (click)="buttonClicked(4)" [ngClass]="{'button-selected': isButtonClicked4}">
+        <button class="btn" (click)="buttonClicked(4)" [disabled]="isButtonClicked4 || showResult" [ngClass]="{'button-selected': isButtonClicked4}">
           {{rhinos[currentQuestionIndex - 1].option4}}
         </button>
       </td>
@@ -57,7 +61,7 @@
 <div>
 </div>
 </div>
-<button [disabled]="!isButtonClicked" (click)="nextQuestion()">Nächste Frage</button>
+<!--<button [disabled]="!isButtonClicked" (click)="nextQuestion()">Nächste Frage</button>-->
 
 
 
