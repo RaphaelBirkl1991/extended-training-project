@@ -1,12 +1,8 @@
-<!--<button class="btn" (click)="buttonClicked(1)" [disabled]="isButtonClicked1 || showResult">Option 1</button>-->
-<!--<button class="btn" (click)="buttonClicked(2)" [disabled]="isButtonClicked2 || showResult">Option 2</button>-->
-<!--<button class="btn" (click)="buttonClicked(3)" [disabled]="isButtonClicked3 || showResult">Option 3</button>-->
-<!--<button class="btn" (click)="buttonClicked(4)" [disabled]="isButtonClicked4 || showResult">Option 4</button>-->
 
 <br><br><br>
 
 <!--  TABELLEN CONTAINER-->
-<div class="table-container">
+<div class="table-container" *ngIf="quizActive">
   <table class="table table-borderless caption-top">
     <caption>Frage: {{currentQuestionIndex}} / {{rhinos.length}}</caption>
     <thead class="table-question">
@@ -50,7 +46,7 @@
 
 
 
-<div class="result-container" *ngIf="showResult">
+<div class="result-container" *ngIf="showResult && quizActive"  >
   <div>
     <p [ngClass]="{'correct': isCorrect, 'incorrect': !isCorrect}">
     {{ isCorrect ? 'Richtig' : 'Falsch' }}</p>
@@ -63,7 +59,9 @@
 </div>
 <!--<button [disabled]="!isButtonClicked" (click)="nextQuestion()">Nächste Frage</button>-->
 
-
+<div class="quiz-stat" *ngIf="!quizActive">
+  <h1>Quiz beendet :)</h1>
+  </div>
 
 
 <footer>

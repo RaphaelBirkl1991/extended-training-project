@@ -20,7 +20,7 @@ export class RhinoComponent implements OnInit {
   isButtonClicked3: boolean = false;
   isButtonClicked4: boolean = false;
 
-  // questionAnswered: boolean = false;
+  quizActive: boolean = true;
   rhinos: Rhino[] = [];
 
   rhino: Rhino = {
@@ -87,17 +87,19 @@ export class RhinoComponent implements OnInit {
     this.isButtonClicked3 = false;
     this.isButtonClicked4 = false;
     this.showResult = false;
-    setTimeout(() => {
-      const btn1 = document.getElementById('btn1') as HTMLElement;
-      btn1.focus();
-    }, 0);
+
+    if (this.currentQuestionIndex > this.rhinos.length ) {
+      this.endQuiz(); // Aufruf der endQuiz()-Funktion, wenn die letzte Frage erreicht wurde
+    } else {
+      setTimeout(() => {
+        const btn1 = document.getElementById('btn1') as HTMLElement;
+        btn1.focus();
+      }, 0);
+    }
   }
 
-  // setFocus() {
-  //     // @ts-ignore
-  //   document.getElementById("btn1").focus();
-  // }
+  endQuiz(){
+    this.quizActive = false;
+  }
+
 }
-
-
-
