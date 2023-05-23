@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, Renderer2, ViewChild, AfterViewInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {CorrectOption} from "../correct-option";
 import {Rhino} from "../rhino";
@@ -8,7 +8,7 @@ import {Rhino} from "../rhino";
   templateUrl: './rhino.component.html',
   styleUrls: ['./rhino.component.css']
 })
-export class RhinoComponent implements OnInit{
+export class RhinoComponent implements OnInit {
 
   currentQuestionIndex = 1;
   public clickedButtonIndex: number | undefined;
@@ -34,6 +34,8 @@ export class RhinoComponent implements OnInit{
     correctoptiontext: '',
     correctoption: CorrectOption.A
   }
+
+
   constructor(private http: HttpClient) {
   }
 
@@ -42,26 +44,27 @@ export class RhinoComponent implements OnInit{
       this.rhinos = r);
   }
 
+
   buttonClicked(buttonIndex: number): void {
     this.isButtonClicked = true;
 
-    if(buttonIndex === 1){
+    if (buttonIndex === 1) {
       this.isButtonClicked1 = true
     }
-    if(buttonIndex === 2){
+    if (buttonIndex === 2) {
       this.isButtonClicked2 = true
     }
-    if(buttonIndex === 3){
+    if (buttonIndex === 3) {
       this.isButtonClicked3 = true
-     }
-    if(buttonIndex === 4) {
+    }
+    if (buttonIndex === 4) {
       this.isButtonClicked4 = true
     }
 
     this.clickedButtonIndex = buttonIndex;
     console.log(this.clickedButtonIndex);
     console.log(this.rhino.correctoption);
-    if(this.clickedButtonIndex == this.rhino.correctoption){
+    if (this.clickedButtonIndex == this.rhino.correctoption) {
       console.log("richtig");
       this.showResult = true;
     } else {
@@ -83,7 +86,18 @@ export class RhinoComponent implements OnInit{
     this.isButtonClicked2 = false;
     this.isButtonClicked3 = false;
     this.isButtonClicked4 = false;
-    this.showResult = false
+    this.showResult = false;
+    setTimeout(() => {
+      const btn1 = document.getElementById('btn1') as HTMLElement;
+      btn1.focus();
+    }, 0);
   }
 
+  // setFocus() {
+  //     // @ts-ignore
+  //   document.getElementById("btn1").focus();
+  // }
 }
+
+
+

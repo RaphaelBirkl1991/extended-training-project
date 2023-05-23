@@ -141,6 +141,10 @@ footer .next {
   cursor: pointer; /* Zeigt an, dass der Button anklickbar ist */
   transform: scale(0.95);
 }
+.next-button:focus {
+  outline: 5px solid lightblue;
+}
+
 
 .next-button:disabled {
   cursor: not-allowed; /* Ändert den Cursor-Stil, wenn der Button auf disabled ist */

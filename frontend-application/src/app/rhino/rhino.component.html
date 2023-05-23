@@ -17,12 +17,12 @@
     <tbody>
     <tr> <!--ROW 1-->
       <td width="50%"><!--COL 1-->
-        <button class="btn" (click)="buttonClicked(1)" [disabled]="isButtonClicked1 || showResult" [ngClass]="{'button-selected': isButtonClicked1 }">
+        <button class="btn" id="btn1" (click)="buttonClicked(1)" [disabled]="isButtonClicked1 || showResult" [ngClass]="{'button-selected': isButtonClicked1 }" tabindex="1" autofocus>
           {{rhinos[currentQuestionIndex - 1].option1}}
         </button>
       </td>
       <td width="50%"><!--COL 2-->
-        <button class="btn" (click)="buttonClicked(2)" [disabled]="isButtonClicked2 || showResult" [ngClass]="{'button-selected': isButtonClicked2}">
+        <button class="btn" (click)="buttonClicked(2)" [disabled]="isButtonClicked2 || showResult" [ngClass]="{'button-selected': isButtonClicked2}" tabindex="2">
           {{rhinos[currentQuestionIndex - 1].option2}}
         </button>
       </td>
@@ -30,13 +30,13 @@
 
     <tr><!--ROW 2-->
       <td width="50%"><!--COL 3-->
-        <button class="btn" (click)="buttonClicked(3)" [disabled]="isButtonClicked3 || showResult" [ngClass]="{'button-selected': isButtonClicked3}">
+        <button class="btn" (click)="buttonClicked(3)" [disabled]="isButtonClicked3 || showResult" [ngClass]="{'button-selected': isButtonClicked3}" tabindex="3">
           {{rhinos[currentQuestionIndex - 1].option3}}
         </button>
       </td>
 
       <td width="50%"><!--COL 4-->
-        <button class="btn" (click)="buttonClicked(4)" [disabled]="isButtonClicked4 || showResult" [ngClass]="{'button-selected': isButtonClicked4}">
+        <button class="btn" (click)="buttonClicked(4)" [disabled]="isButtonClicked4 || showResult" [ngClass]="{'button-selected': isButtonClicked4}" tabindex="4">
           {{rhinos[currentQuestionIndex - 1].option4}}
         </button>
       </td>
@@ -52,11 +52,11 @@
 
 <div class="result-container" *ngIf="showResult">
   <div>
-  <p [ngClass]="{'correct': isCorrect, 'incorrect': !isCorrect}">
-    {{ isCorrect ? 'Richtig' : 'Falsch' }}
-  </p>
-</div>
-<div>{{rhinos[currentQuestionIndex - 1].commentary}}
+    <p [ngClass]="{'correct': isCorrect, 'incorrect': !isCorrect}">
+    {{ isCorrect ? 'Richtig' : 'Falsch' }}</p>
+    <br>
+    <p>Richtige Antwort: {{rhinos[currentQuestionIndex - 1].correctoptiontext}}</p>
+    <p>{{rhinos[currentQuestionIndex - 1].commentary}}
 </div>
 <div>
 </div>
@@ -69,6 +69,6 @@
 <footer>
 <!--  <div class="animal">Thema: Nashörner</div>-->
   <div class="back"><a routerLink="">zurück zur Übersicht</a></div>
-  <button class="next-button" [disabled]="!isButtonClicked" (click)="nextQuestion()">Nächste Frage</button>
+  <button class="next-button" id="next-btn" [disabled]="!isButtonClicked" (click)="nextQuestion()" tabindex="5">Nächste Frage</button>
 
 </footer>
